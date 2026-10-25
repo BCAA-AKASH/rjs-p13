@@ -1,79 +1,41 @@
-import React, { useState } from "react";
+
+import { useState } from 'react';
+import './App.css';
 
 function App() {
+  const [count, setCount] = useState(0);
 
-    // TODO 1:
-    // Create state variables for:
-    // name, email, feedback and error message
+  return (
+    <div className="App">
+      <header className="App-header">
+        <h2>My Page is {count} Times Clicked</h2>
 
+        <button
+          type="button"
+          className="btn btn-primary"
+          onClick={() => setCount(count + 1)}
+        >
+          Increment
+        </button>
 
-    // TODO 2:
-    // Create a function to handle form submission
+        <button
+          type="button"
+          className="btn btn-primary"
+          onClick={() => setCount(count - 1)}
+        >
+          Decrement
+        </button>
 
-
-    // TODO 3:
-    // Validate the following:
-    // 1. Name should not be empty
-    // 2. Email should not be empty
-    // 3. Feedback should not be empty
-    // 4. Email should contain @
-
-
-    // TODO 4:
-    // Display the feedback form
-
-
-    return (
-        <div className="container">
-
-            <h1>Student Feedback Form</h1>
-
-            <form>
-
-                <div>
-                    <label>Name:</label>
-                    <input
-                        type="text"
-                        id="name"
-                        placeholder="Enter your name"
-                    />
-                </div>
-
-                <br />
-
-                <div>
-                    <label>Email:</label>
-                    <input
-                        type="email"
-                        id="email"
-                        placeholder="Enter your email"
-                    />
-                </div>
-
-                <br />
-
-                <div>
-                    <label>Feedback:</label>
-                    <br />
-                    <textarea
-                        id="feedback"
-                        rows="5"
-                        placeholder="Enter your feedback"
-                    ></textarea>
-                </div>
-
-                <br />
-
-                {/* Display validation error here */}
-
-                <button type="submit">
-                    Submit Feedback
-                </button>
-
-            </form>
-
-        </div>
-    );
+        <a
+          href="https://react.dev"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
+  );
 }
 
 export default App;
